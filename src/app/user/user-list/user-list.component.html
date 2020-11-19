@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <h5>USER LIST</h5>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Reviewer?</th>
+            <th>Admin?</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let usr of users">
+            <td>{{usr.id}}</td>
+            <td>{{usr.userName}}</td>
+            <td>{{usr.firstName}} {{usr.lastName}}</td>
+            <td>{{usr.phoneNumber}}</td>
+            <td>{{usr.email}}</td>
+            <td>{{usr.reviewer}}</td>
+            <td>{{usr.admin}}</td>
+            <td>
+                <a routerLink = "/user/edit/{{usr.id}}">Edit </a> 
+                <a routerLink = "/user/detail/{{usr.id}}"> | Details</a>
+            </td>
+        </tr>
+    </table>
+</div>

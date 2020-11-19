@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <h5>VENDOR LIST</h5>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City, State, Zip</th>
+            <th>Number</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let vdr of vendors">
+            <td>{{vdr.id}}</td>
+            <td>{{vdr.code}}</td>
+            <td>{{vdr.name}}</td>
+            <td>{{vdr.address}}</td>
+            <td>{{vdr.city}}, {{vdr.state}}, {{vdr.zip}}</td>
+            <td>{{vdr.phoneNumber}}</td>
+            <td>{{vdr.email}}</td>
+            <td>
+                <a routerLink = "/vendor/edit/{{vdr.id}}">Edit </a> 
+                <a routerLink = "/vendor/detail/{{vdr.id}}"> | Details</a>
+            </td>
+        </tr>
+    </table>
+</div>
