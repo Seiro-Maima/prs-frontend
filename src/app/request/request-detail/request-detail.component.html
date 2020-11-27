@@ -1,0 +1,61 @@
+<div>
+    <div>
+        <h5>REQUEST DETAIL</h5>
+    </div>
+    <table *ngIf="request" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="request.id" disabled type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>
+                <option disabled type="text" size="15" value="request.user.userName">{{request.user.userName}}</option>
+            </td> 
+        </tr>
+        <tr>
+            <th>Full Name</th>
+            <td>
+                <option disabled type="text" size="15">{{request.user.firstName}} {{request.user.lastName}}</option>
+            </td> 
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="request.description" disabled type="text" size="30">
+            </td>
+        </tr>
+        <tr>
+            <th>Justification</th>
+            <td>
+                <input [(ngModel)]="request.justification" disabled type="text" size="30">
+            </td>
+        </tr>
+        <tr>
+            <th>Rejection Reason</th>
+            <td>
+                <input [(ngModel)]="request.reasonForRejection" disabled type="text" size="30">
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>
+                <input [(ngModel)]="request.status" disabled type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>
+                <input [(ngModel)]="request.total" disabled type="number" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="ok()" class="btn btn-primary">Ok</button> | 
+                <button (click)="delete()" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>   

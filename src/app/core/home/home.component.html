@@ -1,1 +1,4 @@
-<p> Ah. Welcome home.</p>
+<div *ngIf="user" class="homeMsg">
+    <p>Ah. There you are, {{user.firstName}}.</p>
+    <p>Welcome 127.0.0.1.</p>
+</div>

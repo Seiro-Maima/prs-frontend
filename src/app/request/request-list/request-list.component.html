@@ -1,0 +1,34 @@
+<div>
+    <div>
+        <h5>REQUEST LIST</h5>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>User</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let req of requests">
+            <td>{{req.id}}</td>
+            <td>{{req.user.firstName}} {{req.user.lastName}}</td>            
+            <td>{{req.description}}</td>
+            <td>{{req.status}}</td>
+            <td>{{req.total}}</td>
+            <td>
+                <a routerLink = "/request/edit/{{req.id}}">Edit </a> 
+                <a routerLink = "/request/detail/{{req.id}}"> | Details</a>
+                <a routerLink = "/request/lines/{{req.id}}"> | Lines</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a routerLink = "/request/create">
+                    <button class="btn btn-primary">Add Request</button>                
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

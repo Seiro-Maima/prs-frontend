@@ -28,6 +28,15 @@ export class UserDetailComponent implements OnInit {
     );
   }
 
+  delete(): void {
+    this.usersvc.remove(this.user).subscribe(
+      res => { console.debug("User deleted: ", res);
+        // if change is successful, go back to vendor-list
+        this.router.navigateByUrl("/user/list");},
+      err => { console.error("Error deleting user", err)}
+    );
+  }
+
   ngOnInit(): void {
     let id = +this.actRout.snapshot.params.id;  // convert to number
     this.usersvc.get(id).subscribe(

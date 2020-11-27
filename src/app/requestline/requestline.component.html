@@ -1,0 +1,53 @@
+<div>
+    <div>
+        <h5>REQUEST - REVIEW</h5>
+    </div>
+    <div>
+        <br>
+        <h6>REQUEST - INFO</h6>
+    </div>
+    <table *ngIf="request" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>User</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>{{request.id}}</td>
+            <td>{{request.user.firstName}} {{request.user.lastName}}</td>            
+            <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+        </tr>
+    </table>
+    <!-- ALL LINES UNDER REQUEST -->
+    <div>
+        <h6>REQUEST - LINE ITEMS</h6>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let line of requestLines">
+            <td>{{line.id}}</td>
+            <td>{{line.product.name}}</td>
+            <td>{{line.quantity}}</td>
+            <td>{{line.product.price}}</td>
+        </tr>
+        <br>
+        <tr colspan="2">
+            <button type="button" class="btn btn-success" (click)="approve()">Approve</button> |
+            <button type="button" class="btn btn-warning" (click)="showRejectButton()">Reject</button> 
+            
+            <span *ngIf="!isShow"> | </span>
+            <input [(ngModel)]="request.reasonForRejection" *ngIf="!isShow" type="text" size="25" placeholder="Enter Reason for Rejection">
+            <span *ngIf="!isShow"> | </span>
+            <button *ngIf="!isShow" type="button" class="btn btn-danger" (click)="reject()">Confirm Rejection</button>
+        </tr>
+    </table>
+</div>

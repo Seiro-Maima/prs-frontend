@@ -19,11 +19,18 @@
             <td>{{usr.firstName}} {{usr.lastName}}</td>
             <td>{{usr.phoneNumber}}</td>
             <td>{{usr.email}}</td>
-            <td>{{usr.reviewer}}</td>
-            <td>{{usr.admin}}</td>
+            <td>{{usr.reviewer ? "Yes" : "No"}}</td>
+            <td>{{usr.admin ? "Yes" : "No"}}</td>
             <td>
                 <a routerLink = "/user/edit/{{usr.id}}">Edit </a> 
                 <a routerLink = "/user/detail/{{usr.id}}"> | Details</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a routerLink = "/user/create">
+                    <button class="btn btn-primary">Add User</button>                
+                </a>
             </td>
         </tr>
     </table>

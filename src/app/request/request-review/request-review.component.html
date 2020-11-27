@@ -1,0 +1,31 @@
+<div>
+    <div>
+        <h5>REQUEST REVIEW</h5>
+    </div>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>User</th>
+            <th>Description</th>
+            <th>Justification</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Date Submitted</th>
+            <th>Date Needed</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let req of requests">
+            <td>{{req.id}}</td>
+            <td>{{req.user.firstName}} {{req.user.lastName}}</td>            
+            <td>{{req.description}}</td>
+            <td>{{req.justification}}</td>
+            <td>{{req.total}}</td>
+            <td>{{req.status}}</td>
+            <td>{{req.submittedDate}}</td>
+            <td>{{req.dateNeeded}}</td>
+            <td>
+                <a routerLink = "/request/review/{{req.id}}">Review</a> 
+            </td>
+        </tr>
+    </table>
+</div>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './user.class';
 
-const baseurl: string="http://localhost:8080/api/users"; 
+const baseurl: string = "http://localhost:8080/api/users"; 
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +39,8 @@ export class UserService {
   }
 
   // function for user to login
-  // login(username: string, password: string): void {
-
-  // }
+  login(username: string, password: string): Observable <User> {
+    return this.http.get(baseurl+ "/" + username + "/" + password) as Observable <User>;
+  }
 
 }

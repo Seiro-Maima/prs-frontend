@@ -22,9 +22,18 @@ export class VendorDetailComponent implements OnInit {
   ok(): void {
     this.vndrSvc.change(this.vendor).subscribe(
       res => { console.debug("Vendor change: ", res);
-        // if change is successful, go back to user-list
+        // if change is successful, go back to vendor-list
         this.router.navigateByUrl("/vendor/list");},
       err => { console.error("Error changing vendor", err)}
+    );
+  }
+
+  delete(): void {
+    this.vndrSvc.remove(this.vendor).subscribe(
+      res => { console.debug("Vendor deleted: ", res);
+        // if change is successful, go back to vendor-list
+        this.router.navigateByUrl("/vendor/list");},
+      err => { console.error("Error deleting vendor", err)}
     );
   }
 

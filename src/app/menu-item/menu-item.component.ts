@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SystemService } from '../core/system.service';
+import { Menu } from '../menu/menu.class';
+import { User } from '../user/user.class';
 
 @Component({
   selector: 'app-menu-item',
@@ -9,11 +12,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MenuItemComponent implements OnInit {
 
   // @Input menu-item property can receive value from parent (menu) component
-  @Input() menuItem: string;
+  @Input() menu: Menu;
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

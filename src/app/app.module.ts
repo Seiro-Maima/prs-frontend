@@ -23,6 +23,17 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestApproveComponent } from './request/request-approve/request-approve.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestlineComponent } from './requestline/requestline.component';
+
 
 @NgModule({
   declarations: [
@@ -30,21 +41,37 @@ import { UserLoginComponent } from './user-login/user-login.component';
     HomeComponent,
     AboutComponent,
     E404Component,
+
     MenuComponent,
     MenuItemComponent,
+    
     UserListComponent,
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
+    
     ProductEditComponent,
     ProductCreateComponent,
     ProductDetailComponent,
     ProductListComponent,
+    
     VendorListComponent,
     VendorCreateComponent,
     VendorEditComponent,
     VendorDetailComponent,
-    UserLoginComponent
+    
+    UserLoginComponent,
+    
+    RequestListComponent,
+    RequestCreateComponent,
+    RequestDetailComponent,
+    RequestApproveComponent,
+    RequestLinesComponent,
+    RequestReviewComponent,
+    RequestlineCreateComponent,
+    RequestlineEditComponent,
+    RequestEditComponent,
+    RequestlineComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<div>
+    <div>
+        <h5>REQUESTLINE CREATE</h5>
+    </div>
+    <table *ngIf="requestline" class="table table-sm">
+
+        <tr>
+            <th>Product</th>
+            <td>
+                <select [(ngModel)]="requestline.product">
+                    <option *ngFor="let prod of products" type="text" size="15" [ngValue]="prod">{{prod.name}}</option>
+                </select>
+            </td> 
+        </tr>
+
+        <tr>
+            <th>Quantity</th>
+            <td>
+                <input [(ngModel)]="requestline.quantity" type="number" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="save()" class="btn btn-primary">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>   

@@ -1,1 +1,57 @@
-<p>product-create works!</p>
+<div>
+    <div>
+        <h5>PRODUCT CREATE</h5>
+    </div>
+    <table *ngIf="product" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="product.id" disabled type="text" size="10">
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor Name</th>
+            <td>
+                <select [(ngModel)]="product.vendor">
+                    <!-- [ngValue] is for an object -->
+                    <option *ngFor="let vendor of vendors" type="text" size="15" [ngValue]="vendor">{{vendor.name}}</option>
+                </select>
+            </td> 
+        </tr>
+        <tr>
+            <th>Part Number</th>
+            <td>
+                <input [(ngModel)]="product.partNumber" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>
+                <input [(ngModel)]="product.name" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>
+                <input [(ngModel)]="product.price" type="number" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Unit</th>
+            <td>
+                <input [(ngModel)]="product.unit" type="text" size="15">
+            </td>
+        </tr>
+        <tr>
+            <th>Photo Path</th>
+            <td>
+                <input [(ngModel)]="product.photoPath" type="text" size="25">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="save()" class="btn btn-primary">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>   

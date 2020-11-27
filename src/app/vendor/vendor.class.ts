@@ -7,8 +7,8 @@ export class Vendor {
     city: string = "";
     state: string = "";
     zip: string = "";
-    phoneNumber: boolean = false;
-    email: boolean = false;
+    phoneNumber: string = "";
+    email: string = "";
 
     constructor(){ }
 

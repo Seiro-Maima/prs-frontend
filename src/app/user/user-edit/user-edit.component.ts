@@ -8,13 +8,14 @@ import { UserService } from '../user.service';
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.css']
 })
+
 export class UserEditComponent implements OnInit {
 
   user: User;
 
   constructor(
     private usersvc: UserService,
-    private actRout: ActivatedRoute,
+    private actRoute: ActivatedRoute,
     private router: Router
   ) { }
 
@@ -28,7 +29,7 @@ export class UserEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let id = +this.actRout.snapshot.params.id;  // convert to number
+    let id = +this.actRoute.snapshot.params.id;  // convert to number
     this.usersvc.get(id).subscribe(
       res => {
         console.debug("User: ", res);
